@@ -18,11 +18,11 @@ def is_enabled(value, default):
 
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ.get('API_ID', ''))
-API_HASH = environ.get('API_HASH', '')
+API_ID = int(environ.get('API_ID', '2468192'))
+API_HASH = environ.get('API_HASH', '4906b3f8f198ec0e24edb2c197677678')
 BOT_TOKEN = environ.get('BOT_TOKEN', '')
 PORT = environ.get("PORT", "8080")
-SUPPORT_CHAT_ID = -1002576160300
+SUPPORT_CHAT_ID = -1001734119324
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
@@ -36,9 +36,9 @@ MELCOW_VID = environ.get("MELCOW_VID", "https://ibb.co/r2GBv87W")
 SPELL_IMG = environ.get("SPELL_IMG", "https://ibb.co/C3PpG8gX")
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '2068233407 2098589219').split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '0').split()]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '2068233407 2098589219').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL')
 auth_grp = environ.get('AUTH_GROUP')
@@ -50,7 +50,7 @@ REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False))
 
 DATABASE_URI = environ.get('DATABASE_URI', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "PIRO")
+DATABASE_NAME = environ.get('DATABASE_NAME', "Filter2")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'FILES')
 CUSTOM_FILE_CAPTION = environ.get(
     "CUSTOM_FILE_CAPTION",
@@ -63,7 +63,7 @@ DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in enviro
 MAX_B_TN = environ.get("MAX_B_TN", "10")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'tessasupport')
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Interworld_Groups')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), False)
 IMDB = is_enabled((environ.get('IMDB', "False")), True)
 AUTO_FFILTER = is_enabled((environ.get('AUTO_FFILTER', "True")), True)
@@ -76,7 +76,7 @@ LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False")
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
 INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
-FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '')).split()]
+FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '-1001683081282')).split()]
 MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "True")), True)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
 PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "False")), True)
