@@ -1,13 +1,17 @@
 FROM python:3.8-slim-buster
 
-RUN apt update && apt upgrade -y
-RUN apt install git -y
-COPY requirements.txt /requirements.txt
+# Install git and update system
+RUN apt update && apt upgrade -y && apt install git -y
 
-RUN cd /
-RUN pip3 install -U pip && pip3 install -U -r requirements.txt
+# Copy requirements and install dependencies
+COPY requirements.txt /requirements.txt
+RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir -r /requirements.txt
+
+# Set working directory
 WORKDIR /PiroAutoFilterBot
 
+# Copy project files
 COPY . .
 
+# Run the bot
 CMD ["python3", "bot.py"]
