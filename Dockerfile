@@ -1,7 +1,11 @@
 FROM python:3.8-slim-buster
 
-# Install git and update system
-RUN apt update && apt upgrade -y && apt install git -y
+# Use archived Debian Buster repositories
+RUN sed -i 's/deb.debian.org/archive.debian.org/g' /etc/apt/sources.list \
+    && sed -i '/deb-src/d' /etc/apt/sources.list \
+    && apt update \
+    && apt install -y git \
+    && apt clean
 
 # Copy requirements and install dependencies
 COPY requirements.txt /requirements.txt
